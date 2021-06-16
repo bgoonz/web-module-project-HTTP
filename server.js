@@ -14,7 +14,8 @@ let movies = [
     director: "Francis Ford Coppola",
     metascore: 100,
     genre: "Drama",
-    description: "War hero Michael is the prodigal son of aging but fearsome crime patriarch Don Vito Corleone. When Michael returns home only to be thrust into an all-too-familiar world of hitmen, corrupt cops, and simmering mafia rivalries, he is forced to choose between his own path and the Corleone family legacy."
+    description:
+      "War hero Michael is the prodigal son of aging but fearsome crime patriarch Don Vito Corleone. When Michael returns home only to be thrust into an all-too-familiar world of hitmen, corrupt cops, and simmering mafia rivalries, he is forced to choose between his own path and the Corleone family legacy.",
   },
   {
     id: 1,
@@ -22,7 +23,8 @@ let movies = [
     director: "George Lucas",
     metascore: 92,
     genre: "Scifi",
-    description: "Luke Skywalker joins forces with a Jedi Knight, a cocky pilot, a Wookiee and two droids to save the galaxy from the Empire's world-destroying battle station, while also attempting to rescue Princess Leia from the mysterious Darth Vader."
+    description:
+      "Luke Skywalker joins forces with a Jedi Knight, a cocky pilot, a Wookiee and two droids to save the galaxy from the Empire's world-destroying battle station, while also attempting to rescue Princess Leia from the mysterious Darth Vader.",
   },
   {
     id: 2,
@@ -30,7 +32,8 @@ let movies = [
     director: "Peter Jackson",
     metascore: 92,
     genre: "Fantasy",
-    description: "A meek Hobbit from the Shire and eight companions set out on a journey to destroy the powerful One Ring and save Middle-earth from the Dark Lord Sauron."
+    description:
+      "A meek Hobbit from the Shire and eight companions set out on a journey to destroy the powerful One Ring and save Middle-earth from the Dark Lord Sauron.",
   },
   {
     id: 3,
@@ -38,7 +41,8 @@ let movies = [
     director: "James Cameron",
     metascore: 94,
     genre: "Action",
-    description: "A cyborg, identical to the one who failed to kill Sarah Connor, must now protect her ten year old son, John Connor, from a more advanced and powerful cyborg."
+    description:
+      "A cyborg, identical to the one who failed to kill Sarah Connor, must now protect her ten year old son, John Connor, from a more advanced and powerful cyborg.",
   },
   {
     id: 4,
@@ -46,7 +50,8 @@ let movies = [
     director: "The Farely Brothers",
     metascore: 76,
     genre: "Comedy",
-    description: "After a woman leaves a briefcase at the airport terminal, a dumb limo driver and his dumber friend set out on a hilarious cross-country road trip to Aspen to return it."
+    description:
+      "After a woman leaves a briefcase at the airport terminal, a dumb limo driver and his dumber friend set out on a hilarious cross-country road trip to Aspen to return it.",
   },
   {
     id: 5,
@@ -54,8 +59,9 @@ let movies = [
     director: "George P. Cosmatos",
     metascore: 89,
     genre: "Drama",
-    description: "A successful lawman's plans to retire anonymously in Tombstone, Arizona are disrupted by the kind of outlaws he was famous for eliminating."
-  }
+    description:
+      "A successful lawman's plans to retire anonymously in Tombstone, Arizona are disrupted by the kind of outlaws he was famous for eliminating.",
+  },
 ];
 
 let movieId = movies.length;
@@ -65,7 +71,7 @@ app.get("/api/movies", (req, res) => {
 });
 
 app.get("/api/movies/:id", (req, res) => {
-  const movie = movies.filter(movie => `${movie.id}` === req.params.id)[0];
+  const movie = movies.filter((movie) => `${movie.id}` === req.params.id)[0];
   res.status(200).json(movie);
 });
 
@@ -86,13 +92,13 @@ app.put("/api/movies/:id", (req, res) => {
     req.body.id === undefined ||
     !req.body.title ||
     !req.body.director ||
-    !req.body.metascore 
+    !req.body.metascore
   ) {
     res
       .status(422)
       .send("Make sure your request body has all the fields it needs");
   }
-  movies = movies.map(movie => {
+  movies = movies.map((movie) => {
     if (`${movie.id}` === req.params.id) {
       return req.body;
     }
@@ -104,12 +110,12 @@ app.put("/api/movies/:id", (req, res) => {
 app.delete("/api/movies/:id", (req, res) => {
   if (!req.params.id)
     res.status(400).send("Your request is missing the movie id");
-  movies = movies.filter(movie => `${movie.id}` !== req.params.id);
-  res.status(202).send(req.params.id);
+  movies = movies.filter((movie) => `${movie.id}` !== req.params.id);
+  res.status(202).send(movies);
 });
 
-app.get("/", function(req, res) {
-  res.send("App is working 👍");
+app.get("/", function (req, res) {
+  res.send("Server is working 👍");
 });
 
 app.listen(5000, () => {
