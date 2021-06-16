@@ -4,20 +4,45 @@ import { Link, useParams, useHistory } from 'react-router-dom';
 import axios from 'axios';
 
 const Movie = (props) => {
-    const { addToFavorites } = props;
+
+    //SLICES OF STATE, PROPS, HOOKS 
+    const { setMovies, setFavoriteMovies, movies, favoriteMovies } = props;
 
     const [movie, setMovie] = useState('');
 
     const { id } = useParams();
-    const { push } = useHistory();
+    const history = useHistory();
 
+
+    //HANDLES FAVORITE MOVIE CLICK
+
+    const favoriteMovie = ()=>{
+        setFavoriteMovies([
+            ...favoriteMovies, movie
+        ])
+    }
+
+    //HANDLES DELETE MOVIE CLICK AND REQUEST 
+    const deleteMovieRequest = () => {
+        axios.delete(`http://localhost:5000/api/movies/${id}`, movie)
+        .then((res)=>{
+            console.log("SUCCEEDED POSTING DELETE REQUEST", res);
+            setMovies(res.data);
+            history.push("/movies");
+        })
+        .catch((err)=>{
+            console.log("FAILED POSTING DELETE REQUEST", err);
+        })
+    }
+
+    //LOADS INDIVIDUAL MOVIE 
     useEffect(()=>{
         axios.get(`http://localhost:5000/api/movies/${id}`)
             .then(res=>{
                 setMovie(res.data);
             })
             .catch(err=>{
-                console.log(err.response);
+                console.log(err);
             })
     }, [id]);
 
@@ -50,9 +75,9 @@ const Movie = (props) => {
                         </section>
                         
                         <section>
-                            <span className="m-2 btn btn-dark">Favorite</span>
+                            <span onClick={favoriteMovie} className="m-2 btn btn-dark">Favorite</span>
                             <Link to={`/movies/edit/${movie.id}`} className="m-2 btn btn-success">Edit</Link>
-                            <span className="delete"><input type="button" className="m-2 btn btn-danger" value="Delete"/></span>
+                            <span onClick={deleteMovieRequest} className="delete"><input type="button" className="m-2 btn btn-danger" value="Delete"/></span>
                         </section>
                     </div>
                 </div>

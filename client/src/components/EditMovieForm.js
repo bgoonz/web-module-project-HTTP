@@ -5,7 +5,10 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 const EditMovieForm = (props) => {
-	const { push } = useHistory();
+
+	const { setMovies }=props;
+	const params = useParams();
+	const history = useHistory();
 
 	const [movie, setMovie] = useState({
 		title:"",
@@ -14,7 +17,21 @@ const EditMovieForm = (props) => {
 		metascore: 0,
 		description: ""
 	});
+
+	//LOADS IN MOVIE TO EDIT UPON RENDER
+
+	useEffect(()=>{
+		axios.get(`http://localhost:5000/api/movies/${params.id}`)
+		.then((res)=>{
+			console.log("SUCCESSFULLY GOT MOVIE TO EDIT", res);
+			setMovie(res.data);
+		})
+		.catch((err)=>{
+			console.log("FAILED TO GET MOVIE TO EDIT", err);
+		})
+	},[])
 	
+	//HANDLES CHANGE ON EDIT MOVIE FORM 
 	const handleChange = (e) => {
         setMovie({
             ...movie,
@@ -22,8 +39,18 @@ const EditMovieForm = (props) => {
         });
     }
 
+	//SUBMITS NEWLY EDITED MOVIE
     const handleSubmit = (e) => {
-		e.preventDefault();
+        e.preventDefault();
+		axios.put(`http://localhost:5000/api/movies/${params.id}`, movie)
+		.then((res)=>{
+			console.log("SUCCEEDED SUBMITTING NEWLY EDITED MOVIES", res);
+			setMovies(res.data);
+			history.push(`/movies/${params.id}`)
+		})
+		.catch((err)=>{
+			console.log("FAILED TO SUBMIT NEWLY EDITED MOVIE", err);
+		})
 	}
 	
 	const { title, director, genre, metascore, description } = movie;
