@@ -1,385 +1,1065 @@
-<!DOCTYPE html><html><head>
-      <title>README</title>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      
-      <link rel="stylesheet" href="file:///c:\Users\bryan\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.5.21\node_modules\@shd101wyy\mume\dependencies\katex\katex.min.css">
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      <style>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>README</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="file:///c:\Users\bryan\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.5.21\node_modules\@shd101wyy\mume\dependencies\katex\katex.min.css"
+    />
+
+    <style>
       /**
  * prism.js Github theme based on GitHub's theme.
  * @author Sam Clarke
  */
-code[class*="language-"],
-pre[class*="language-"] {
-  color: #333;
-  background: none;
-  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
-  text-align: left;
-  white-space: pre;
-  word-spacing: normal;
-  word-break: normal;
-  word-wrap: normal;
-  line-height: 1.4;
+      code[class*="language-"],
+      pre[class*="language-"] {
+        color: #333;
+        background: none;
+        font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+        text-align: left;
+        white-space: pre;
+        word-spacing: normal;
+        word-break: normal;
+        word-wrap: normal;
+        line-height: 1.4;
 
-  -moz-tab-size: 8;
-  -o-tab-size: 8;
-  tab-size: 8;
+        -moz-tab-size: 8;
+        -o-tab-size: 8;
+        tab-size: 8;
 
-  -webkit-hyphens: none;
-  -moz-hyphens: none;
-  -ms-hyphens: none;
-  hyphens: none;
-}
+        -webkit-hyphens: none;
+        -moz-hyphens: none;
+        -ms-hyphens: none;
+        hyphens: none;
+      }
 
-/* Code blocks */
-pre[class*="language-"] {
-  padding: .8em;
-  overflow: auto;
-  /* border: 1px solid #ddd; */
-  border-radius: 3px;
-  /* background: #fff; */
-  background: #f5f5f5;
-}
+      /* Code blocks */
+      pre[class*="language-"] {
+        padding: 0.8em;
+        overflow: auto;
+        /* border: 1px solid #ddd; */
+        border-radius: 3px;
+        /* background: #fff; */
+        background: #f5f5f5;
+      }
 
-/* Inline code */
-:not(pre) > code[class*="language-"] {
-  padding: .1em;
-  border-radius: .3em;
-  white-space: normal;
-  background: #f5f5f5;
-}
+      /* Inline code */
+      :not(pre) > code[class*="language-"] {
+        padding: 0.1em;
+        border-radius: 0.3em;
+        white-space: normal;
+        background: #f5f5f5;
+      }
 
-.token.comment,
-.token.blockquote {
-  color: #969896;
-}
+      .token.comment,
+      .token.blockquote {
+        color: #969896;
+      }
 
-.token.cdata {
-  color: #183691;
-}
+      .token.cdata {
+        color: #183691;
+      }
 
-.token.doctype,
-.token.punctuation,
-.token.variable,
-.token.macro.property {
-  color: #333;
-}
+      .token.doctype,
+      .token.punctuation,
+      .token.variable,
+      .token.macro.property {
+        color: #333;
+      }
 
-.token.operator,
-.token.important,
-.token.keyword,
-.token.rule,
-.token.builtin {
-  color: #a71d5d;
-}
+      .token.operator,
+      .token.important,
+      .token.keyword,
+      .token.rule,
+      .token.builtin {
+        color: #a71d5d;
+      }
 
-.token.string,
-.token.url,
-.token.regex,
-.token.attr-value {
-  color: #183691;
-}
+      .token.string,
+      .token.url,
+      .token.regex,
+      .token.attr-value {
+        color: #183691;
+      }
 
-.token.property,
-.token.number,
-.token.boolean,
-.token.entity,
-.token.atrule,
-.token.constant,
-.token.symbol,
-.token.command,
-.token.code {
-  color: #0086b3;
-}
+      .token.property,
+      .token.number,
+      .token.boolean,
+      .token.entity,
+      .token.atrule,
+      .token.constant,
+      .token.symbol,
+      .token.command,
+      .token.code {
+        color: #0086b3;
+      }
 
-.token.tag,
-.token.selector,
-.token.prolog {
-  color: #63a35c;
-}
+      .token.tag,
+      .token.selector,
+      .token.prolog {
+        color: #63a35c;
+      }
 
-.token.function,
-.token.namespace,
-.token.pseudo-element,
-.token.class,
-.token.class-name,
-.token.pseudo-class,
-.token.id,
-.token.url-reference .token.variable,
-.token.attr-name {
-  color: #795da3;
-}
+      .token.function,
+      .token.namespace,
+      .token.pseudo-element,
+      .token.class,
+      .token.class-name,
+      .token.pseudo-class,
+      .token.id,
+      .token.url-reference .token.variable,
+      .token.attr-name {
+        color: #795da3;
+      }
 
-.token.entity {
-  cursor: help;
-}
+      .token.entity {
+        cursor: help;
+      }
 
-.token.title,
-.token.title .token.punctuation {
-  font-weight: bold;
-  color: #1d3e81;
-}
+      .token.title,
+      .token.title .token.punctuation {
+        font-weight: bold;
+        color: #1d3e81;
+      }
 
-.token.list {
-  color: #ed6a43;
-}
+      .token.list {
+        color: #ed6a43;
+      }
 
-.token.inserted {
-  background-color: #eaffea;
-  color: #55a532;
-}
+      .token.inserted {
+        background-color: #eaffea;
+        color: #55a532;
+      }
 
-.token.deleted {
-  background-color: #ffecec;
-  color: #bd2c00;
-}
+      .token.deleted {
+        background-color: #ffecec;
+        color: #bd2c00;
+      }
 
-.token.bold {
-  font-weight: bold;
-}
+      .token.bold {
+        font-weight: bold;
+      }
 
-.token.italic {
-  font-style: italic;
-}
+      .token.italic {
+        font-style: italic;
+      }
 
+      /* JSON */
+      .language-json .token.property {
+        color: #183691;
+      }
 
-/* JSON */
-.language-json .token.property {
-  color: #183691;
-}
+      .language-markup .token.tag .token.punctuation {
+        color: #333;
+      }
 
-.language-markup .token.tag .token.punctuation {
-  color: #333;
-}
+      /* CSS */
+      code.language-css,
+      .language-css .token.function {
+        color: #0086b3;
+      }
 
-/* CSS */
-code.language-css,
-.language-css .token.function {
-  color: #0086b3;
-}
+      /* YAML */
+      .language-yaml .token.atrule {
+        color: #63a35c;
+      }
 
-/* YAML */
-.language-yaml .token.atrule {
-  color: #63a35c;
-}
+      code.language-yaml {
+        color: #183691;
+      }
 
-code.language-yaml {
-  color: #183691;
-}
+      /* Ruby */
+      .language-ruby .token.function {
+        color: #333;
+      }
 
-/* Ruby */
-.language-ruby .token.function {
-  color: #333;
-}
+      /* Markdown */
+      .language-markdown .token.url {
+        color: #795da3;
+      }
 
-/* Markdown */
-.language-markdown .token.url {
-  color: #795da3;
-}
+      /* Makefile */
+      .language-makefile .token.symbol {
+        color: #795da3;
+      }
 
-/* Makefile */
-.language-makefile .token.symbol {
-  color: #795da3;
-}
+      .language-makefile .token.variable {
+        color: #183691;
+      }
 
-.language-makefile .token.variable {
-  color: #183691;
-}
+      .language-makefile .token.builtin {
+        color: #0086b3;
+      }
 
-.language-makefile .token.builtin {
-  color: #0086b3;
-}
+      /* Bash */
+      .language-bash .token.keyword {
+        color: #0086b3;
+      }
 
-/* Bash */
-.language-bash .token.keyword {
-  color: #0086b3;
-}
+      /* highlight */
+      pre[data-line] {
+        position: relative;
+        padding: 1em 0 1em 3em;
+      }
+      pre[data-line] .line-highlight-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: transparent;
+        display: block;
+        width: 100%;
+      }
 
-/* highlight */
-pre[data-line] {
-  position: relative;
-  padding: 1em 0 1em 3em;
-}
-pre[data-line] .line-highlight-wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: transparent;
-  display: block;
-  width: 100%;
-}
+      pre[data-line] .line-highlight {
+        position: absolute;
+        left: 0;
+        right: 0;
+        padding: inherit 0;
+        margin-top: 1em;
+        background: hsla(24, 20%, 50%, 0.08);
+        background: linear-gradient(
+          to right,
+          hsla(24, 20%, 50%, 0.1) 70%,
+          hsla(24, 20%, 50%, 0)
+        );
+        pointer-events: none;
+        line-height: inherit;
+        white-space: pre;
+      }
 
-pre[data-line] .line-highlight {
-  position: absolute;
-  left: 0;
-  right: 0;
-  padding: inherit 0;
-  margin-top: 1em;
-  background: hsla(24, 20%, 50%,.08);
-  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
-  pointer-events: none;
-  line-height: inherit;
-  white-space: pre;
-}
+      pre[data-line] .line-highlight:before,
+      pre[data-line] .line-highlight[data-end]:after {
+        content: attr(data-start);
+        position: absolute;
+        top: 0.4em;
+        left: 0.6em;
+        min-width: 1em;
+        padding: 0 0.5em;
+        background-color: hsla(24, 20%, 50%, 0.4);
+        color: hsl(24, 20%, 95%);
+        font: bold 65%/1.5 sans-serif;
+        text-align: center;
+        vertical-align: 0.3em;
+        border-radius: 999px;
+        text-shadow: none;
+        box-shadow: 0 1px white;
+      }
 
-pre[data-line] .line-highlight:before, 
-pre[data-line] .line-highlight[data-end]:after {
-  content: attr(data-start);
-  position: absolute;
-  top: .4em;
-  left: .6em;
-  min-width: 1em;
-  padding: 0 .5em;
-  background-color: hsla(24, 20%, 50%,.4);
-  color: hsl(24, 20%, 95%);
-  font: bold 65%/1.5 sans-serif;
-  text-align: center;
-  vertical-align: .3em;
-  border-radius: 999px;
-  text-shadow: none;
-  box-shadow: 0 1px white;
-}
+      pre[data-line] .line-highlight[data-end]:after {
+        content: attr(data-end);
+        top: auto;
+        bottom: 0.4em;
+      }
+      html body {
+        font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans,
+          sans-serif;
+        font-size: 16px;
+        line-height: 1.6;
+        color: #333;
+        background-color: #fff;
+        overflow: initial;
+        box-sizing: border-box;
+        word-wrap: break-word;
+      }
+      html body > :first-child {
+        margin-top: 0;
+      }
+      html body h1,
+      html body h2,
+      html body h3,
+      html body h4,
+      html body h5,
+      html body h6 {
+        line-height: 1.2;
+        margin-top: 1em;
+        margin-bottom: 16px;
+        color: #000;
+      }
+      html body h1 {
+        font-size: 2.25em;
+        font-weight: 300;
+        padding-bottom: 0.3em;
+      }
+      html body h2 {
+        font-size: 1.75em;
+        font-weight: 400;
+        padding-bottom: 0.3em;
+      }
+      html body h3 {
+        font-size: 1.5em;
+        font-weight: 500;
+      }
+      html body h4 {
+        font-size: 1.25em;
+        font-weight: 600;
+      }
+      html body h5 {
+        font-size: 1.1em;
+        font-weight: 600;
+      }
+      html body h6 {
+        font-size: 1em;
+        font-weight: 600;
+      }
+      html body h1,
+      html body h2,
+      html body h3,
+      html body h4,
+      html body h5 {
+        font-weight: 600;
+      }
+      html body h5 {
+        font-size: 1em;
+      }
+      html body h6 {
+        color: #5c5c5c;
+      }
+      html body strong {
+        color: #000;
+      }
+      html body del {
+        color: #5c5c5c;
+      }
+      html body a:not([href]) {
+        color: inherit;
+        text-decoration: none;
+      }
+      html body a {
+        color: #08c;
+        text-decoration: none;
+      }
+      html body a:hover {
+        color: #00a3f5;
+        text-decoration: none;
+      }
+      html body img {
+        max-width: 100%;
+      }
+      html body > p {
+        margin-top: 0;
+        margin-bottom: 16px;
+        word-wrap: break-word;
+      }
+      html body > ul,
+      html body > ol {
+        margin-bottom: 16px;
+      }
+      html body ul,
+      html body ol {
+        padding-left: 2em;
+      }
+      html body ul.no-list,
+      html body ol.no-list {
+        padding: 0;
+        list-style-type: none;
+      }
+      html body ul ul,
+      html body ul ol,
+      html body ol ol,
+      html body ol ul {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+      html body li {
+        margin-bottom: 0;
+      }
+      html body li.task-list-item {
+        list-style: none;
+      }
+      html body li > p {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+      html body .task-list-item-checkbox {
+        margin: 0 0.2em 0.25em -1.8em;
+        vertical-align: middle;
+      }
+      html body .task-list-item-checkbox:hover {
+        cursor: pointer;
+      }
+      html body blockquote {
+        margin: 16px 0;
+        font-size: inherit;
+        padding: 0 15px;
+        color: #5c5c5c;
+        background-color: #f0f0f0;
+        border-left: 4px solid #d6d6d6;
+      }
+      html body blockquote > :first-child {
+        margin-top: 0;
+      }
+      html body blockquote > :last-child {
+        margin-bottom: 0;
+      }
+      html body hr {
+        height: 4px;
+        margin: 32px 0;
+        background-color: #d6d6d6;
+        border: 0 none;
+      }
+      html body table {
+        margin: 10px 0 15px 0;
+        border-collapse: collapse;
+        border-spacing: 0;
+        display: block;
+        width: 100%;
+        overflow: auto;
+        word-break: normal;
+        word-break: keep-all;
+      }
+      html body table th {
+        font-weight: bold;
+        color: #000;
+      }
+      html body table td,
+      html body table th {
+        border: 1px solid #d6d6d6;
+        padding: 6px 13px;
+      }
+      html body dl {
+        padding: 0;
+      }
+      html body dl dt {
+        padding: 0;
+        margin-top: 16px;
+        font-size: 1em;
+        font-style: italic;
+        font-weight: bold;
+      }
+      html body dl dd {
+        padding: 0 16px;
+        margin-bottom: 16px;
+      }
+      html body code {
+        font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+        font-size: 0.85em !important;
+        color: #000;
+        background-color: #f0f0f0;
+        border-radius: 3px;
+        padding: 0.2em 0;
+      }
+      html body code::before,
+      html body code::after {
+        letter-spacing: -0.2em;
+        content: "\00a0";
+      }
+      html body pre > code {
+        padding: 0;
+        margin: 0;
+        font-size: 0.85em !important;
+        word-break: normal;
+        white-space: pre;
+        background: transparent;
+        border: 0;
+      }
+      html body .highlight {
+        margin-bottom: 16px;
+      }
+      html body .highlight pre,
+      html body pre {
+        padding: 1em;
+        overflow: auto;
+        font-size: 0.85em !important;
+        line-height: 1.45;
+        border: #d6d6d6;
+        border-radius: 3px;
+      }
+      html body .highlight pre {
+        margin-bottom: 0;
+        word-break: normal;
+      }
+      html body pre code,
+      html body pre tt {
+        display: inline;
+        max-width: initial;
+        padding: 0;
+        margin: 0;
+        overflow: initial;
+        line-height: inherit;
+        word-wrap: normal;
+        background-color: transparent;
+        border: 0;
+      }
+      html body pre code:before,
+      html body pre tt:before,
+      html body pre code:after,
+      html body pre tt:after {
+        content: normal;
+      }
+      html body p,
+      html body blockquote,
+      html body ul,
+      html body ol,
+      html body dl,
+      html body pre {
+        margin-top: 0;
+        margin-bottom: 16px;
+      }
+      html body kbd {
+        color: #000;
+        border: 1px solid #d6d6d6;
+        border-bottom: 2px solid #c7c7c7;
+        padding: 2px 4px;
+        background-color: #f0f0f0;
+        border-radius: 3px;
+      }
+      @media print {
+        html body {
+          background-color: #fff;
+        }
+        html body h1,
+        html body h2,
+        html body h3,
+        html body h4,
+        html body h5,
+        html body h6 {
+          color: #000;
+          page-break-after: avoid;
+        }
+        html body blockquote {
+          color: #5c5c5c;
+        }
+        html body pre {
+          page-break-inside: avoid;
+        }
+        html body table {
+          display: table;
+        }
+        html body img {
+          display: block;
+          max-width: 100%;
+          max-height: 100%;
+        }
+        html body pre,
+        html body code {
+          word-wrap: break-word;
+          white-space: pre;
+        }
+      }
+      .markdown-preview {
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+      }
+      .markdown-preview .pagebreak,
+      .markdown-preview .newpage {
+        page-break-before: always;
+      }
+      .markdown-preview pre.line-numbers {
+        position: relative;
+        padding-left: 3.8em;
+        counter-reset: linenumber;
+      }
+      .markdown-preview pre.line-numbers > code {
+        position: relative;
+      }
+      .markdown-preview pre.line-numbers .line-numbers-rows {
+        position: absolute;
+        pointer-events: none;
+        top: 1em;
+        font-size: 100%;
+        left: 0;
+        width: 3em;
+        letter-spacing: -1px;
+        border-right: 1px solid #999;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+      .markdown-preview pre.line-numbers .line-numbers-rows > span {
+        pointer-events: none;
+        display: block;
+        counter-increment: linenumber;
+      }
+      .markdown-preview pre.line-numbers .line-numbers-rows > span:before {
+        content: counter(linenumber);
+        color: #999;
+        display: block;
+        padding-right: 0.8em;
+        text-align: right;
+      }
+      .markdown-preview .mathjax-exps .MathJax_Display {
+        text-align: center !important;
+      }
+      .markdown-preview:not([for="preview"]) .code-chunk .btn-group {
+        display: none;
+      }
+      .markdown-preview:not([for="preview"]) .code-chunk .status {
+        display: none;
+      }
+      .markdown-preview:not([for="preview"]) .code-chunk .output-div {
+        margin-bottom: 16px;
+      }
+      .scrollbar-style::-webkit-scrollbar {
+        width: 8px;
+      }
+      .scrollbar-style::-webkit-scrollbar-track {
+        border-radius: 10px;
+        background-color: transparent;
+      }
+      .scrollbar-style::-webkit-scrollbar-thumb {
+        border-radius: 5px;
+        background-color: rgba(150, 150, 150, 0.66);
+        border: 4px solid rgba(150, 150, 150, 0.66);
+        background-clip: content-box;
+      }
+      html body[for="html-export"]:not([data-presentation-mode]) {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        margin: 0;
+        padding: 0;
+        overflow: auto;
+      }
+      html
+        body[for="html-export"]:not([data-presentation-mode])
+        .markdown-preview {
+        position: relative;
+        top: 0;
+      }
+      @media screen and (min-width: 914px) {
+        html
+          body[for="html-export"]:not([data-presentation-mode])
+          .markdown-preview {
+          padding: 2em calc(50% - 457px + 2em);
+        }
+      }
+      @media screen and (max-width: 914px) {
+        html
+          body[for="html-export"]:not([data-presentation-mode])
+          .markdown-preview {
+          padding: 2em;
+        }
+      }
+      @media screen and (max-width: 450px) {
+        html
+          body[for="html-export"]:not([data-presentation-mode])
+          .markdown-preview {
+          font-size: 14px !important;
+          padding: 1em;
+        }
+      }
+      @media print {
+        html
+          body[for="html-export"]:not([data-presentation-mode])
+          #sidebar-toc-btn {
+          display: none;
+        }
+      }
+      html
+        body[for="html-export"]:not([data-presentation-mode])
+        #sidebar-toc-btn {
+        position: fixed;
+        bottom: 8px;
+        left: 8px;
+        font-size: 28px;
+        cursor: pointer;
+        color: inherit;
+        z-index: 99;
+        width: 32px;
+        text-align: center;
+        opacity: 0.4;
+      }
+      html
+        body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc]
+        #sidebar-toc-btn {
+        opacity: 1;
+      }
+      html
+        body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc]
+        .md-sidebar-toc {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 300px;
+        height: 100%;
+        padding: 32px 0 48px 0;
+        font-size: 14px;
+        box-shadow: 0 0 4px rgba(150, 150, 150, 0.33);
+        box-sizing: border-box;
+        overflow: auto;
+        background-color: inherit;
+      }
+      html
+        body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc]
+        .md-sidebar-toc::-webkit-scrollbar {
+        width: 8px;
+      }
+      html
+        body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc]
+        .md-sidebar-toc::-webkit-scrollbar-track {
+        border-radius: 10px;
+        background-color: transparent;
+      }
+      html
+        body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc]
+        .md-sidebar-toc::-webkit-scrollbar-thumb {
+        border-radius: 5px;
+        background-color: rgba(150, 150, 150, 0.66);
+        border: 4px solid rgba(150, 150, 150, 0.66);
+        background-clip: content-box;
+      }
+      html
+        body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc]
+        .md-sidebar-toc
+        a {
+        text-decoration: none;
+      }
+      html
+        body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc]
+        .md-sidebar-toc
+        ul {
+        padding: 0 1.6em;
+        margin-top: 0.8em;
+      }
+      html
+        body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc]
+        .md-sidebar-toc
+        li {
+        margin-bottom: 0.8em;
+      }
+      html
+        body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc]
+        .md-sidebar-toc
+        ul {
+        list-style-type: none;
+      }
+      html
+        body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc]
+        .markdown-preview {
+        left: 300px;
+        width: calc(100% - 300px);
+        padding: 2em calc(50% - 457px - 150px);
+        margin: 0;
+        box-sizing: border-box;
+      }
+      @media screen and (max-width: 1274px) {
+        html
+          body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc]
+          .markdown-preview {
+          padding: 2em;
+        }
+      }
+      @media screen and (max-width: 450px) {
+        html
+          body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc]
+          .markdown-preview {
+          width: 100%;
+        }
+      }
+      html
+        body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc])
+        .markdown-preview {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      html
+        body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc])
+        .md-sidebar-toc {
+        display: none;
+      }
+      /* Please visit the URL below for more information: */
+      /*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+    </style>
+  </head>
+  <body for="html-export">
+    <div class="mume markdown-preview">
+      <div>
+        <h1
+          class="mume-header"
+          id="http-ajax-ii-react-module-project-movie-crud"
+        >
+          HTTP / AJAX II React Module Project: Movie CRUD
+        </h1>
 
-pre[data-line] .line-highlight[data-end]:after {
-  content: attr(data-end);
-  top: auto;
-  bottom: .4em;
-}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
-/* Please visit the URL below for more information: */
-/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+        <p>
+          This module explored HTTP methods, REST interfaces, CRUD apps and
+          using put and delete to allow editing and deleting functionality. We
+          also dug into how to pass props to Route connected components and
+          using URL params to get values from an api. In this project, you will
+          practice each of these skills by implement various pieces of
+          functionality in a movie database CRUD app.
+        </p>
+        <h2 class="mume-header" id="objectives">Objectives</h2>
 
-      </style>
-    </head>
-    <body for="html-export">
-      <div class="mume markdown-preview  ">
-      <div><h1 class="mume-header" id="http-ajax-ii-react-module-project-movie-crud">HTTP / AJAX II React Module Project: Movie CRUD</h1>
+        <ul>
+          <li>
+            Understand how to use the post, put and delete HTTP methods to
+            interact with server data.
+          </li>
+          <li>
+            Understand how to sync server data with an applications internal
+            state.
+          </li>
+          <li>
+            Understand how to pass values into a Route component to allow for
+            the updating of state.
+          </li>
+        </ul>
+        <h2 class="mume-header" id="introduction">Introduction</h2>
 
-<p>This module explored HTTP methods, REST interfaces, CRUD apps and using put and delete to allow editing and deleting functionality. We also dug into how to pass props to Route connected components and using URL params to get values from an api. In this project, you will practice each of these skills by implement various pieces of functionality in a movie database CRUD app.</p>
-<h2 class="mume-header" id="objectives">Objectives</h2>
+        <p>
+          CRUD applications are the foundation of most web applications. Being
+          able to manage creating, edit and deleting data from an external
+          source is as key a skill as it gets. In this project, you will
+          complete the code nessisary to allow all of these fundmental actions.
+        </p>
+        <p><img src="project-goals.gif" alt="Movie DB Example" /></p>
+        <p>
+          <em
+            ><strong
+              >Make sure to complete your tasks one at a time and complete test
+              each task before proceeding forward.</strong
+            ></em
+          >
+        </p>
+        <h2 class="mume-header" id="instructions">Instructions</h2>
 
-<ul>
-<li>Understand how to use the post, put and delete HTTP methods to interact with server data.</li>
-<li>Understand how to sync server data with an applications internal state.</li>
-<li>Understand how to pass values into a Route component to allow for the updating of state.</li>
-</ul>
-<h2 class="mume-header" id="introduction">Introduction</h2>
+        <h3 class="mume-header" id="task-1-project-set-up">
+          Task 1: Project Set Up
+        </h3>
 
-<p>CRUD applications are the foundation of most web applications. Being able to manage creating, edit and deleting data from an external source is as key a skill as it gets. In this project, you will complete the code nessisary to allow all of these fundmental actions.</p>
-<p><img src="project-goals.gif" alt="Movie DB Example"></p>
-<p><em><strong>Make sure to complete your tasks one at a time and complete test each task before proceeding forward.</strong></em></p>
-<h2 class="mume-header" id="instructions">Instructions</h2>
+        <ul>
+          <li class="task-list-item">
+            <input type="checkbox" class="task-list-item-checkbox" /> Create a
+            forked copy of this project.
+          </li>
+          <li class="task-list-item">
+            <input type="checkbox" class="task-list-item-checkbox" /> Clone your
+            OWN version of the repository in your terminal
+          </li>
+          <li class="task-list-item">
+            <input type="checkbox" class="task-list-item-checkbox" /> cd into
+            the project base directory <code>cd web-module-project-HTTP</code>
+          </li>
+          <li class="task-list-item">
+            <input type="checkbox" class="task-list-item-checkbox" /> Download
+            server dependencies by running <code>npm install</code>
+          </li>
+          <li class="task-list-item">
+            <input type="checkbox" class="task-list-item-checkbox" /> Run the
+            local web server by running <code>node server.js</code>
+          </li>
+          <li class="task-list-item">
+            <input type="checkbox" class="task-list-item-checkbox" /> Open a new
+            terminal window and cd into the client code <code>cd client</code>
+          </li>
+          <li class="task-list-item">
+            <input type="checkbox" class="task-list-item-checkbox" /> Download
+            project dependencies by running <code>npm install</code>
+          </li>
+          <li class="task-list-item">
+            <input type="checkbox" class="task-list-item-checkbox" /> Start up
+            the app using <code>npm start</code>
+          </li>
+        </ul>
+        <h3 class="mume-header" id="task-2-project-requirements">
+          Task 2: Project Requirements
+        </h3>
 
-<h3 class="mume-header" id="task-1-project-set-up">Task 1: Project Set Up</h3>
+        <h4 class="mume-header" id="editing-a-movie">Editing a Movie</h4>
 
-<ul>
-<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> Create a forked copy of this project.</li>
-<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> Clone your OWN version of the repository in your terminal</li>
-<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> cd into the project base directory <code>cd web-module-project-HTTP</code></li>
-<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> Download server dependencies by running <code>npm install</code></li>
-<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> Run the local web server by running <code>node server.js</code></li>
-<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> Open a new terminal window and cd into the client code <code>cd client</code></li>
-<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> Download project dependencies by running <code>npm install</code></li>
-<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> Start up the app using <code>npm start</code></li>
-</ul>
-<h3 class="mume-header" id="task-2-project-requirements">Task 2: Project Requirements</h3>
+        <blockquote>
+          <p>
+            <em
+              >Let&apos;s start by walking through the process of adding the
+              routing, component and service calls need for resource
+              updating</em
+            >
+          </p>
+        </blockquote>
+        <ul>
+          <li class="task-list-item">
+            <p>
+              <input type="checkbox" class="task-list-item-checkbox" /> First,
+              we need to be able to navigate to the edit movie component. In
+              App.js, add in the <code>&lt;EditMovieForm&gt;</code>component to
+              the supplied edit route.
+            </p>
+          </li>
+          <li class="task-list-item">
+            <p>
+              <input type="checkbox" class="task-list-item-checkbox" /> Next, we
+              need to grab the id being passed into the component through the
+              url. Use the <code>useParams</code> hook to get the id value.
+            </p>
+          </li>
+          <li class="task-list-item">
+            <p>
+              <input type="checkbox" class="task-list-item-checkbox" /> We need
+              to be able to load in the current movie&apos;s attributes into our
+              local form state. When <code>EditMovieForm</code> mount, retrieve
+              our current id&apos;s movie from the api and save the data
+              returned to local state.
+            </p>
+          </li>
+          <li class="task-list-item">
+            <p>
+              <input type="checkbox" class="task-list-item-checkbox" /> At this
+              point, nothing happens when the edit form is submitted. Add in the
+              api call needed to update the server with our updated movie data.
+            </p>
+          </li>
+          <li class="task-list-item">
+            <p>
+              <input type="checkbox" class="task-list-item-checkbox" />
+              Don&apos;t forget to make sure that your server data and your
+              local state are in sync! Make any changes the edit route needed to
+              give the edit form access to App&apos;s
+              <code>setMovies</code> method.
+            </p>
+          </li>
+          <li class="task-list-item">
+            <p>
+              <input type="checkbox" class="task-list-item-checkbox" /> Now that
+              we have access to <code>setMovies</code>, made sure the updated
+              list of movies is saved to our global state.
+            </p>
+          </li>
+          <li class="task-list-item">
+            <p>
+              <input type="checkbox" class="task-list-item-checkbox" /> Redirect
+              the user to the currently edited movie&apos;s individual info
+              page.
+            </p>
+          </li>
+        </ul>
+        <h4 class="mume-header" id="deleting-a-movie">Deleting a Movie</h4>
 
-<h4 class="mume-header" id="editing-a-movie">Editing a Movie</h4>
+        <blockquote>
+          <p>
+            <em
+              >You added in a CRUD feature! Good job! Now let&apos;s get deleted
+              squared away...</em
+            >
+          </p>
+        </blockquote>
+        <ul>
+          <li class="task-list-item">
+            <p>
+              <input type="checkbox" class="task-list-item-checkbox" /> Identify
+              the component that holds the &quot;button&quot; needed for
+              deletion. Add an event handler to that button.
+            </p>
+          </li>
+          <li class="task-list-item">
+            <p>
+              <input type="checkbox" class="task-list-item-checkbox" /> Build an
+              event handler that makes a request to delete the currently viewed
+              movie. Observe what is returned from the request.
+            </p>
+          </li>
+          <li class="task-list-item">
+            <p>
+              <input type="checkbox" class="task-list-item-checkbox" /> You will
+              once again need to keep the server and state data in sync. In
+              <code>App.js</code>, complete the <code>deleteMovie</code> method
+              so that it receives an id, filters out any movie with that id and
+              sets state to that resultant movie list.
+            </p>
+          </li>
+          <li class="task-list-item">
+            <p>
+              <input type="checkbox" class="task-list-item-checkbox" /> Pass
+              <code>deleteMovie</code> into the approprate component.
+            </p>
+          </li>
+          <li class="task-list-item">
+            <p>
+              <input type="checkbox" class="task-list-item-checkbox" /> Run
+              <code>deleteMovie</code> on the currently selected movie when your
+              delete request is complete and redirect the user to the
+              <code>/movies</code> route.
+            </p>
+          </li>
+        </ul>
+        <h4 class="mume-header" id="adding-a-movie">Adding a Movie</h4>
 
-<blockquote>
-<p><em>Let&apos;s start by walking through the process of adding the routing, component and service calls need for resource updating</em></p>
-</blockquote>
-<ul>
-<li class="task-list-item">
-<p><input type="checkbox" class="task-list-item-checkbox"> First, we need to be able to navigate to the edit movie component. In App.js, add in the <code>&lt;EditMovieForm&gt;</code>component to the supplied edit route.</p>
-</li>
-<li class="task-list-item">
-<p><input type="checkbox" class="task-list-item-checkbox"> Next, we need to grab the id being passed into the component through the url. Use the <code>useParams</code> hook to get the id value.</p>
-</li>
-<li class="task-list-item">
-<p><input type="checkbox" class="task-list-item-checkbox"> We need to be able to load in the current movie&apos;s attributes into our local form state. When <code>EditMovieForm</code> mount, retrieve our current id&apos;s movie from the api and save the data returned to local state.</p>
-</li>
-<li class="task-list-item">
-<p><input type="checkbox" class="task-list-item-checkbox"> At this point, nothing happens when the edit form is submitted. Add in the api call needed to update the server with our updated movie data.</p>
-</li>
-<li class="task-list-item">
-<p><input type="checkbox" class="task-list-item-checkbox"> Don&apos;t forget to make sure that your server data and your local state are in sync! Make any changes the edit route needed to give the edit form access to App&apos;s <code>setMovies</code> method.</p>
-</li>
-<li class="task-list-item">
-<p><input type="checkbox" class="task-list-item-checkbox"> Now that we have access to <code>setMovies</code>, made sure the updated list of movies is saved to our global state.</p>
-</li>
-<li class="task-list-item">
-<p><input type="checkbox" class="task-list-item-checkbox"> Redirect the user to the currently edited movie&apos;s individual info page.</p>
-</li>
-</ul>
-<h4 class="mume-header" id="deleting-a-movie">Deleting a Movie</h4>
+        <blockquote>
+          <p>
+            <em
+              >Alright! You ready! Let&apos;s see you use the skills of the
+              previous steps to build a crud function from start to finish.</em
+            >
+          </p>
+        </blockquote>
+        <ul>
+          <li class="task-list-item">
+            <p>
+              <input type="checkbox" class="task-list-item-checkbox" /> Use
+              <code>EditMovieForm.js</code> as a model to build an
+              <code>AddMovieForm</code> component from scratch. The component
+              should hold all the attributes of a new movie in local state.
+            </p>
+          </li>
+          <li class="task-list-item">
+            <p>
+              <input type="checkbox" class="task-list-item-checkbox" /> Add in a
+              route that allows access to <code>AddMovieForm</code>.
+            </p>
+          </li>
+          <li class="task-list-item">
+            <p>
+              <input type="checkbox" class="task-list-item-checkbox" /> Locate
+              the part of the ui that should redirect to your new
+              <code>AddMovieForm</code>. Make that button works as expected.
+            </p>
+          </li>
+          <li class="task-list-item">
+            <p>
+              <input type="checkbox" class="task-list-item-checkbox" /> In
+              <code>AddMovieForm,</code> add an event handler for form
+              submission. When the form is submitted, run the approprate request
+              for adding a movie with the component&apos;s state values.
+            </p>
+          </li>
+          <li class="task-list-item">
+            <p>
+              <input type="checkbox" class="task-list-item-checkbox" /> Make
+              sure your component has access to and runs and modifications
+              needed to global state and redirects to <code>/movies</code> after
+              creation.
+            </p>
+          </li>
+        </ul>
+        <h3 class="mume-header" id="stretch-goals">Stretch goals</h3>
 
-<blockquote>
-<p><em>You added in a CRUD feature! Good job! Now let&apos;s get deleted squared away...</em></p>
-</blockquote>
-<ul>
-<li class="task-list-item">
-<p><input type="checkbox" class="task-list-item-checkbox"> Identify the component that holds the &quot;button&quot; needed for deletion. Add an event handler to that button.</p>
-</li>
-<li class="task-list-item">
-<p><input type="checkbox" class="task-list-item-checkbox"> Build an event handler that makes a request to delete the currently viewed movie. Observe what is returned from the request.</p>
-</li>
-<li class="task-list-item">
-<p><input type="checkbox" class="task-list-item-checkbox"> You will once again need to keep the server and state data in sync. In <code>App.js</code>, complete the <code>deleteMovie</code> method so that it receives an id, filters out any movie with that id and sets state to that resultant movie list.</p>
-</li>
-<li class="task-list-item">
-<p><input type="checkbox" class="task-list-item-checkbox"> Pass <code>deleteMovie</code> into the approprate component.</p>
-</li>
-<li class="task-list-item">
-<p><input type="checkbox" class="task-list-item-checkbox"> Run <code>deleteMovie</code> on the currently selected movie when your delete request is complete and redirect the user to the <code>/movies</code> route.</p>
-</li>
-</ul>
-<h4 class="mume-header" id="adding-a-movie">Adding a Movie</h4>
+        <ul>
+          <li>
+            Make the added DeleteMovieModal appear and be reacted to before
+            deletion occurs.
+          </li>
+          <li>
+            Add in <code>addToFavorites</code> functionality. When the favorite
+            button is pushed in the <code>Movie</code> component, make sure that
+            when the favorite button is pushed, the id and name of the currently
+            viewed into the favorite state slice in <code>App.js.</code>
+          </li>
+          <li>
+            For extra credit, ensure that only unique movies can be added as
+            favorites. Consider the <code>.find</code> method for arrays.
+          </li>
+          <li>Add in some Style!</li>
+        </ul>
+        <h3 class="mume-header" id="resource-api-documentation">
+          Resource: API documentation
+        </h3>
 
-<blockquote>
-<p><em>Alright! You ready! Let&apos;s see you use the skills of the previous steps to build a crud function from start to finish.</em></p>
-</blockquote>
-<ul>
-<li class="task-list-item">
-<p><input type="checkbox" class="task-list-item-checkbox"> Use <code>EditMovieForm.js</code> as a model to build an <code>AddMovieForm</code> component from scratch. The component should hold all the attributes of a new movie in local state.</p>
-</li>
-<li class="task-list-item">
-<p><input type="checkbox" class="task-list-item-checkbox"> Add in a route that allows access to <code>AddMovieForm</code>.</p>
-</li>
-<li class="task-list-item">
-<p><input type="checkbox" class="task-list-item-checkbox"> Locate the part of the ui that should redirect to your new <code>AddMovieForm</code>. Make that button works as expected.</p>
-</li>
-<li class="task-list-item">
-<p><input type="checkbox" class="task-list-item-checkbox"> In <code>AddMovieForm,</code> add an event handler for form submission. When the form is submitted, run the approprate request for adding a movie with the component&apos;s state values.</p>
-</li>
-<li class="task-list-item">
-<p><input type="checkbox" class="task-list-item-checkbox"> Make sure your component has access to and runs and modifications needed to global state and redirects to <code>/movies</code> after creation.</p>
-</li>
-</ul>
-<h3 class="mume-header" id="stretch-goals">Stretch goals</h3>
+        <h4 class="mume-header" id="get-httplocalhost5000apimovies">
+          GET <code>http://localhost:5000/api/movies</code>
+        </h4>
 
-<ul>
-<li>Make the added DeleteMovieModal appear and be reacted to before deletion occurs.</li>
-<li>Add in <code>addToFavorites</code> functionality. When the favorite button is pushed in the <code>Movie</code> component, make sure that when the favorite button is pushed, the id and name of the currently viewed into the favorite state slice in <code>App.js.</code></li>
-<li>For extra credit, ensure that only unique movies can be added as favorites. Consider the <code>.find</code> method for arrays.</li>
-<li>Add in some Style!</li>
-</ul>
-<h3 class="mume-header" id="resource-api-documentation">Resource: API documentation</h3>
-
-<h4 class="mume-header" id="get-httplocalhost5000apimovies">GET <code>http://localhost:5000/api/movies</code></h4>
-
-<ul>
-<li>Retrieves all the Movies with the following formatting:</li>
-</ul>
-<pre data-role="codeBlock" data-info class="language-"><code>[{
+        <ul>
+          <li>Retrieves all the Movies with the following formatting:</li>
+        </ul>
+        <pre data-role="codeBlock" data-info class="language-"><code>[{
   id: 5,
   title: &apos;Tombstone&apos;,
   director: &apos;George P. Cosmatos&apos;,
@@ -387,86 +1067,137 @@ pre[data-line] .line-highlight[data-end]:after {
   genre: &quot;Drama&quot;,
   description: : &quot;A successful lawman&apos;s plans to retire anonymously in Tombstone, Arizona are disrupted by the kind of outlaws he was famous for eliminating.&quot;
 }]
-</code></pre><h4 class="mume-header" id="get-httplocalhost5000apimovies-1">GET <code>http://localhost:5000/api/movies</code></h4>
+</code></pre>
+        <h4 class="mume-header" id="get-httplocalhost5000apimovies-1">
+          GET <code>http://localhost:5000/api/movies</code>
+        </h4>
 
-<ul>
-<li>Retrieves all movies on the server.</li>
-</ul>
-<h4 class="mume-header" id="get-httplocalhost5000apimoviesid">GET <code>http://localhost:5000/api/movies/:id</code></h4>
+        <ul>
+          <li>Retrieves all movies on the server.</li>
+        </ul>
+        <h4 class="mume-header" id="get-httplocalhost5000apimoviesid">
+          GET <code>http://localhost:5000/api/movies/:id</code>
+        </h4>
 
-<ul>
-<li>Retrieves a movie with the passed value as id.</li>
-</ul>
-<h4 class="mume-header" id="post-httplocalhost5000apimovies">POST <code>http://localhost:5000/api/movies</code></h4>
+        <ul>
+          <li>Retrieves a movie with the passed value as id.</li>
+        </ul>
+        <h4 class="mume-header" id="post-httplocalhost5000apimovies">
+          POST <code>http://localhost:5000/api/movies</code>
+        </h4>
 
-<ul>
-<li>Adds the movie passed in through body to the server movies list. Returns updated movies list.</li>
-</ul>
-<h4 class="mume-header" id="put-httplocalhost5000apimoviesid">PUT <code>http://localhost:5000/api/movies/:id</code></h4>
+        <ul>
+          <li>
+            Adds the movie passed in through body to the server movies list.
+            Returns updated movies list.
+          </li>
+        </ul>
+        <h4 class="mume-header" id="put-httplocalhost5000apimoviesid">
+          PUT <code>http://localhost:5000/api/movies/:id</code>
+        </h4>
 
-<ul>
-<li>Replaced the movie with the passed in id with data passed in through body. Returns update movies list.</li>
-</ul>
-<h4 class="mume-header" id="delete-httplocalhost5000apimoviesid">DELETE <code>http://localhost:5000/api/movies/:id</code></h4>
+        <ul>
+          <li>
+            Replaced the movie with the passed in id with data passed in through
+            body. Returns update movies list.
+          </li>
+        </ul>
+        <h4 class="mume-header" id="delete-httplocalhost5000apimoviesid">
+          DELETE <code>http://localhost:5000/api/movies/:id</code>
+        </h4>
 
-<ul>
-<li>Removed movie with the passed in id. Returns the deleted movie&apos;s id.</li>
-</ul>
-</div>
+        <ul>
+          <li>
+            Removed movie with the passed in id. Returns the deleted
+            movie&apos;s id.
+          </li>
+        </ul>
       </div>
-      <div class="md-sidebar-toc"><ul>
-<li><a href="#http-ajax-ii-react-module-project-movie-crud">HTTP / AJAX II React Module Project: Movie CRUD</a>
-<ul>
-<li><a href="#objectives">Objectives</a></li>
-<li><a href="#introduction">Introduction</a></li>
-<li><a href="#instructions">Instructions</a>
-<ul>
-<li><a href="#task-1-project-set-up">Task 1: Project Set Up</a></li>
-<li><a href="#task-2-project-requirements">Task 2: Project Requirements</a>
-<ul>
-<li><a href="#editing-a-movie">Editing a Movie</a></li>
-<li><a href="#deleting-a-movie">Deleting a Movie</a></li>
-<li><a href="#adding-a-movie">Adding a Movie</a></li>
-</ul>
-</li>
-<li><a href="#stretch-goals">Stretch goals</a></li>
-<li><a href="#resource-api-documentation">Resource: API documentation</a>
-<ul>
-<li><a href="#get-httplocalhost5000apimovies">GET <code>http://localhost:5000/api/movies</code></a></li>
-<li><a href="#get-httplocalhost5000apimovies-1">GET <code>http://localhost:5000/api/movies</code></a></li>
-<li><a href="#get-httplocalhost5000apimoviesid">GET <code>http://localhost:5000/api/movies/:id</code></a></li>
-<li><a href="#post-httplocalhost5000apimovies">POST <code>http://localhost:5000/api/movies</code></a></li>
-<li><a href="#put-httplocalhost5000apimoviesid">PUT <code>http://localhost:5000/api/movies/:id</code></a></li>
-<li><a href="#delete-httplocalhost5000apimoviesid">DELETE <code>http://localhost:5000/api/movies/:id</code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</div>
-      <a id="sidebar-toc-btn">&#x2261;</a>
-    
-    
-    
-    
-    
-    
-    
-    
-<script>
+    </div>
+    <div class="md-sidebar-toc">
+      <ul>
+        <li>
+          <a href="#http-ajax-ii-react-module-project-movie-crud"
+            >HTTP / AJAX II React Module Project: Movie CRUD</a
+          >
+          <ul>
+            <li><a href="#objectives">Objectives</a></li>
+            <li><a href="#introduction">Introduction</a></li>
+            <li>
+              <a href="#instructions">Instructions</a>
+              <ul>
+                <li>
+                  <a href="#task-1-project-set-up">Task 1: Project Set Up</a>
+                </li>
+                <li>
+                  <a href="#task-2-project-requirements"
+                    >Task 2: Project Requirements</a
+                  >
+                  <ul>
+                    <li><a href="#editing-a-movie">Editing a Movie</a></li>
+                    <li><a href="#deleting-a-movie">Deleting a Movie</a></li>
+                    <li><a href="#adding-a-movie">Adding a Movie</a></li>
+                  </ul>
+                </li>
+                <li><a href="#stretch-goals">Stretch goals</a></li>
+                <li>
+                  <a href="#resource-api-documentation"
+                    >Resource: API documentation</a
+                  >
+                  <ul>
+                    <li>
+                      <a href="#get-httplocalhost5000apimovies"
+                        >GET <code>http://localhost:5000/api/movies</code></a
+                      >
+                    </li>
+                    <li>
+                      <a href="#get-httplocalhost5000apimovies-1"
+                        >GET <code>http://localhost:5000/api/movies</code></a
+                      >
+                    </li>
+                    <li>
+                      <a href="#get-httplocalhost5000apimoviesid"
+                        >GET
+                        <code>http://localhost:5000/api/movies/:id</code></a
+                      >
+                    </li>
+                    <li>
+                      <a href="#post-httplocalhost5000apimovies"
+                        >POST <code>http://localhost:5000/api/movies</code></a
+                      >
+                    </li>
+                    <li>
+                      <a href="#put-httplocalhost5000apimoviesid"
+                        >PUT
+                        <code>http://localhost:5000/api/movies/:id</code></a
+                      >
+                    </li>
+                    <li>
+                      <a href="#delete-httplocalhost5000apimoviesid"
+                        >DELETE
+                        <code>http://localhost:5000/api/movies/:id</code></a
+                      >
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <a id="sidebar-toc-btn">&#x2261;</a>
 
-var sidebarTOCBtn = document.getElementById('sidebar-toc-btn')
-sidebarTOCBtn.addEventListener('click', function(event) {
-  event.stopPropagation()
-  if (document.body.hasAttribute('html-show-sidebar-toc')) {
-    document.body.removeAttribute('html-show-sidebar-toc')
-  } else {
-    document.body.setAttribute('html-show-sidebar-toc', true)
-  }
-})
-</script>
-      
-  
-    </body></html>
+    <script>
+      var sidebarTOCBtn = document.getElementById("sidebar-toc-btn");
+      sidebarTOCBtn.addEventListener("click", function (event) {
+        event.stopPropagation();
+        if (document.body.hasAttribute("html-show-sidebar-toc")) {
+          document.body.removeAttribute("html-show-sidebar-toc");
+        } else {
+          document.body.setAttribute("html-show-sidebar-toc", true);
+        }
+      });
+    </script>
+  </body>
+</html>
