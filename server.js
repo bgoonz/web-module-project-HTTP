@@ -115,7 +115,7 @@ app.delete("/api/movies/:id", (req, res) => {
 });
 
 app.get("/", function (req, res) {
-  res.send("App is working 👍");
+  res.send("Server is working 👍");
 });
 
 app.listen(5000, () => {
